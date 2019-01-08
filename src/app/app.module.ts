@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpModule, JsonpModule, Jsonp } from '@angular/http';
 import {FormsModule } from '@angular/forms';
-import { RouterModule } from '@Angular/router';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -13,6 +13,8 @@ import { MovieComponent } from './components/movie/movie.component';
 import { CardComponent } from './components/card/card.component';
 
 import { ROUTES } from './app.routes';
+import { ImageMoviePipe } from './pipes/image-movie.pipe';
+import { BillboardComponent } from './components/shared/billboard/billboard.component';
 
 
 @NgModule({
@@ -23,14 +25,16 @@ import { ROUTES } from './app.routes';
     HomeComponent,
     SearchComponent,
     MovieComponent,
-    CardComponent
+    CardComponent,
+    ImageMoviePipe,
+    BillboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot( ROUTES, { useHash: true })
+    RouterModule.forRoot( ROUTES, { useHash: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

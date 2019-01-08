@@ -1,3 +1,25 @@
-<p>
-  home works!
-</p>
+<div class="jumbotron">
+  <h1 class="display-4">MoviesApp</h1>
+  <p class="lead">This is a simple app of movies</p>  
+</div>
+<span class="mt-5"></span>
+<div class="container">  
+  <app-billboard 
+    billboardTitle="Películas en cartelera" 
+    [movies]="billboard |slice:0:6">
+  </app-billboard>
+</div>
+<span class="mt-lg-5"></span>
+<div class="container">  
+  <app-billboard 
+    billboardTitle="Populares" 
+    [movies]="populares |slice:0:6">
+  </app-billboard>
+</div>
+<span class="mt-lg-5"></span>
+<div class="container">  
+    <app-billboard 
+      billboardTitle="Populares entre los pequeños" 
+      [movies]="popularesKids |slice:0:6">
+    </app-billboard>
+  </div>
